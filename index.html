@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>销售激励</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // 生成30-50之间的随机整数
+        function generateRandomNumber() {
+            return Math.floor(Math.random() * 21) + 30;
+        }
+        
+        // 引用“鼓励销售的话语（精简版）.docx”中的10句鼓励语
+        const encouragements = [
+            "扫码抽现金，业绩更带劲！",
+            "抽现金，拼业绩，冲！",
+            "现金在手，签单更有劲头！",
+            "扫码赢现金，销售勇争先！",
+            "现金添喜气，业绩创佳绩！",
+            "抽现金添力，签大单夺魁！",
+            "现金加油，业绩攀高峰！",
+            "扫码抽现金，签单好运临！",
+            "现金到手，再签一单更牛！",
+            "抽现金蓄力，爆业绩显能！"
+        ];
+        
+        // 随机选择一句鼓励语
+        function getRandomEncouragement() {
+            const randomIndex = Math.floor(Math.random() * encouragements.length);
+            return encouragements[randomIndex];
+        }
+        
+        // 页面加载时显示随机内容
+        window.onload = function() {
+            document.getElementById('numberDisplay').textContent = generateRandomNumber();
+            document.getElementById('encouragementDisplay').textContent = getRandomEncouragement();
+        };
+    </script>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff8f0;
+            padding: 20px;
+        }
+        #numberDisplay {
+            font-size: clamp(8rem, 20vw, 15rem);
+            font-weight: bold;
+            color: #e67e22;
+            margin-bottom: 40px;
+        }
+        #encouragementDisplay {
+            font-size: clamp(1.2rem, 5vw, 2rem);
+            color: #d35400;
+            text-align: center;
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div id="numberDisplay"></div>
+    <div id="encouragementDisplay"></div>
+</body>
+</html>
